@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `users` MODIFY `otp` VARCHAR(10) NOT NULL DEFAULT '0';

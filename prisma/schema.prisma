@@ -16,7 +16,7 @@ model users {
   email      String       @db.VarChar(50) @unique
   mobile     String       @db.VarChar(50)
   password   String       @db.VarChar(50)
-  otp        String       @db.VarChar(10)
+  otp        String       @default("0") @db.VarChar(10)
 
   categories categories[]
   customers  customers[]
