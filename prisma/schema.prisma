@@ -23,7 +23,7 @@ model users {
   products   products[]
   invoices   invoices[]
   invoice_products invoice_products[]
-
+  product_meta product_meta[]
   createdAt  DateTime     @default(now()) @db.Timestamp(0)
   updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
 }
@@ -85,7 +85,8 @@ model product_meta{
 
   productId Int @unique
   products products @relation(fields: [productId],references: [id],onDelete: Restrict,onUpdate: Cascade)
-
+  userId Int
+  users users @relation(fields: [userId],references: [id],onDelete: Restrict,onUpdate: Cascade)
   createdAt  DateTime     @default(now()) @db.Timestamp(0)
   updatedAt  DateTime     @default(now()) @db.Timestamp(0) @updatedAt
 }
